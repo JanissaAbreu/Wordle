@@ -1,38 +1,178 @@
 .App {
+  /*making the text be centered with the screen and giving even numbers to fit the size of a browser*/
   text-align: center;
+  /* made the background color brown*/
+  background-color: black;
+  width: 100vw;/*viewpoint width*/
+  height: 100vh;/*viewpoint height*/
+  /* display: flex; */
+  color: gray;
+  /*making the lines to seperate things white*/
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*puts no space betwwen the header and the rest*/
+body {
+  /*creates space from the above css object in this case it creates 0% of space*/
+  padding: 0%;
+  /*put no visible edges*/
+  margin: 0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*holds the entirety of nav in app js*/
+nav {
+  height: 60px; /*puts the height to 60 pixels*/
+  width: 100%; /*puts the width to 100% of the screen*/
+  /*put no visible edges*/
+  margin: 0;
+  /*makes the border line gray which serperates the grid and the keyboard*/
+  border-bottom: 1px solid grey;
+  /*displays it in grid-like formation*/
+  display: grid;
+  /*put the entirety of app js into the middle of the screen*/
+  place-items: center;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/*for the word wordle*/
+nav h1 {
+  /*adding all the colors and fonts for the word wordle located at the top of the page*/
+  margin: 0;
+  /*makes the font of the title wordle into this*/
+  font-family: Helvetica, Arial, sans-serif;
+  /*makes the color of the font*/
   color: white;
+  /*font size is 45 pixels for the titles*/
+  font-size: 45px;
+}
+/**/
+.game {
+  width: 100vw; /*viewpoint width*/
+  height: calc(100vh - 170px);/*viewpoint height subtracted from a few pixels */
+  /*display flex is basically a flex container that expants items to fill available spaces
+  it's like stack overflow in javascript. Since the css encompases JS it makes sense*/
+  display: flex;
+  /*aligns the items to the center of the screen*/
+  align-items: center;
+  /*creates space from the above css object in this case it creates 50px of space*/
+  padding-top: 50px;
+  /*directs the flex to fill the column spaces*/
+  flex-direction: column;
+}
+/*this is for the grid itself and the cubes inside the grid as well*/
+.board {
+  /*left-right size of the board*/
+  width: 450px;
+  /*up-down size of the board*/
+  height: 550px;
+  /*border color that encapsulated the board */
+  border: 1px solid black;
+  /*display flex is basically a flex container that expants items to fill available spaces
+  it's like stack overflow in javascript. Since the css encompases JS it makes sense*/
+  display: flex;
+  /*directs the flex to fill the column spaces*/
+  flex-direction: column;
+}
+/*represents the rows inside of the main border of the game*/
+.row {
+  /*sets the flexible length on this flexible item*/
+  flex: 33%;
+  /*display flex is basically a flex container that expants items to fill available spaces
+  it's like stack overflow in javascript. Since the css encompases JS it makes sense*/
+  display: flex;
+  /*directs the flex to fill the row spaces*/
+  flex-direction: row;
+  /*put a 5px visible edge*/
+  margin: 5px;
+}
+/*the letters that'll be outprinted in the boxes in the board */
+.letter {
+  /*sets the flexible length on this flexible item*/
+  flex: 33%;
+  height: 100%;
+  border: 1px solid grey;
+  /*put a 5px visible edge*/
+  margin: 5px;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  font-weight: bolder;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+#correct {
+  background-color: #528d4e;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#almost {
+  background-color: #b49f39;
+}
+
+#error {
+  background-color: #3a393c;
+}
+
+.keyboard {
+  width: 700px;
+  height: 300px;
+  /*creates space from the above css object in this case it creates 60px of space*/
+  margin-top: 60px;
+}
+
+.line1 {
+  /*sets the flexible length on this flexible item*/
+  flex: 33%;
+  /*display flex is basically a flex container that expants items to fill available spaces
+  it's like stack overflow in javascript. Since the css encompases JS it makes sense*/
+  display: flex;
+  /*directs the flex to fill the row spaces*/
+  flex-direction: row;
+  /*display flex is basically a flex container that expants items to fill available spaces
+  it's like stack overflow in javascript. Since the css encompases JS it makes sense*/
+  display: flex;
+  justify-content: center;
+  /*put a 5px visible edge*/
+  margin: 5px;
+}
+.line2 {
+  /*sets the flexible length on this flexible item*/
+  flex: 33%;
+  /*display flex is basically a flex container that expants items to fill available spaces
+  it's like stack overflow in javascript. Since the css encompases JS it makes sense*/
+  display: flex;
+  /*directs the flex to fill the row spaces*/
+  flex-direction: row;
+  justify-content: center;
+  /*put a 5px visible edge*/
+  margin: 5px;
+}
+.line3 {
+  /*sets the flexible length on this flexible item*/
+  flex: 33%;
+  /*display flex is basically a flex container that expants items to fill available spaces
+  it's like stack overflow in javascript. Since the css encompases JS it makes sense*/
+  display: flex;
+  /*directs the flex to fill the row spaces*/
+  flex-direction: row;
+  justify-content: center;
+  /*put a 5px visible edge*/
+  margin: 5px;
+}
+
+.key {
+  width: 50px;
+  height: 70px;
+  /*put a 5px visible edge*/
+  margin: 5px;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  background-color: grey;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+
+#big {
+  width: 100px;
+}
+#disabled {
+  background-color: #3a393c;
 }
